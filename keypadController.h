@@ -2,14 +2,20 @@
 #define _KEYPADCONTROLLER_H_
 #include "order.h"
 #include "customerView.h"
+#include <iostream>
 
-class keypadController
+#include "ObserverPattern-cpp/ObserverPattern.cpp"
+
+using std::cout;
+
+class keypadController: public IObserver
 {
 private:
   order *cart;
   customerView display;
 public:
   keypadController(order *);
+  void update();
 };
 
 #endif

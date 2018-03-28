@@ -20,6 +20,7 @@ StoreInventory::StoreInventory(const char filename[])
       db >> produce >> price >> productID;
       item newProduce(produce,price,productID);
       inventory.push_back(newProduce);
+      notifyObservers();
     }
   }
 }

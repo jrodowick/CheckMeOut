@@ -3,7 +3,9 @@
 #include <vector>
 #include "item.h"
 
-class StoreInventory
+#include "ObserverPattern-cpp/ObserverPattern.cpp"
+
+class StoreInventory: public Observable
 {
   private:
     std::vector<item> inventory;

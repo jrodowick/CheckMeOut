@@ -4,7 +4,11 @@
 #include "StoreInventory.h"
 #include "order.h"
 
-class registerController
+#include "ObserverPattern-cpp/ObserverPattern.cpp"
+
+using std::cout;
+
+class registerController: public IObserver
 {
 private:
   StoreInventory *database;
@@ -13,6 +17,7 @@ private:
 public:
   registerController(StoreInventory *, order *);
   void processOrder();
+  void update();
 };
 
 #endif

@@ -8,6 +8,9 @@
 #include "registerController.h"
 #include "keypadController.h"
 
+#include "ObserverPattern-cpp/ObserverPattern.cpp"
+
+
 const char DB_FILE[] = "fruit.db";
 
 int main()
@@ -20,6 +23,8 @@ int main()
   keypadController keypad(&current);
   registerController ticket(&inventory,&current);
   ticket.processOrder();
+  current.addObserver(&keypad);
+  current.addObserver(&ticket);
 
   return 0;
 }
